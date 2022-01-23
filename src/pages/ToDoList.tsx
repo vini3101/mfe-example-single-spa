@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Parcel from 'single-spa-react/parcel'
 import { v4 as uuid } from 'uuid'
+// @ts-ignore
+import { emitEvent } from '@mfe/utils'
 
 import App from '../layouts/App'
 
@@ -13,14 +15,12 @@ const ToDoList = () => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    dispatchEvent(new CustomEvent('@mfe/react-single/todo/add-task', 
-    { detail: 
+    emitEvent('@mfe/react-single/todo/add-task', 
       {
         id: uuid(),
         name: task
       } 
-    }
-    ))
+    )
     setTask('')
   }
 

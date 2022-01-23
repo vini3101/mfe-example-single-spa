@@ -10,7 +10,7 @@ import ToDoList from '../pages/ToDoList'
 import Home from '../pages/Home'
 
 const Routes = () => (
-  <BrowserRouter basename='react-single'>
+  <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/to-do-list" component={ToDoList} />
